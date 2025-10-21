@@ -44,5 +44,16 @@ public class Noten {
         return result;
     }
 
+    public static int getMaxRoundedGrade(int[] grades) {
+        int[] rounded = getRoundedGrades(grades);
+        int max = rounded[0];
+
+        for (int g : rounded) {
+            if (g > max)
+                max = g;
+        }
+
+        return max;
+    }
 
 }
