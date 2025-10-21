@@ -19,4 +19,13 @@ public class Noten {
         return result;
     }
 
+    public static double getAverage(int[] grades) {
+        int sum = 0;
+
+        for (int g : grades)
+            sum += g;
+
+        return Math.round((sum * 100.0 / grades.length)) / 100.0;
+    }
+
 }
