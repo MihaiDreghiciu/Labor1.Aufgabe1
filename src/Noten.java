@@ -28,4 +28,21 @@ public class Noten {
         return Math.round((sum * 100.0 / grades.length)) / 100.0;
     }
 
+    public static int[] getRoundedGrades(int[] grades) {
+        int[] result = new int[grades.length];
+
+        for (int i = 0; i < grades.length; i++) {
+            int grade = grades[i];
+            if (grade >= 38) {
+                int next = ((grade / 5) + 1) * 5;
+                if (next - grade < 3)
+                    grade = next;
+            }
+            result[i] = grade;
+        }
+
+        return result;
+    }
+
+
 }
